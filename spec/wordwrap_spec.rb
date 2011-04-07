@@ -39,5 +39,9 @@ describe Wordwrap do
     it "should return the empty string for the empty string" do
       Wordwrap.new(4).wrap("").should == ""
     end
+
+    it "should not modify one word shorter than wrap length" do
+      Wordwrap.new(6).wrap("word").should == "word"
+    end
   end
 end
