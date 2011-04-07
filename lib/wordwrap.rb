@@ -7,6 +7,6 @@ class Wordwrap
   end
 
   def wrap(text)
-
+    raise InvalidParameter, "parameter must be a String" unless text.class == String
   end
 end
