@@ -47,5 +47,9 @@ describe Wordwrap do
     it "should wrap two words at word boundary" do
       Wordwrap.new(5).wrap("word word").should == "word\nword"
     end
+
+    it "should wrap three words at word boundaries" do
+      Wordwrap.new(5).wrap("word word word").should == "word\nword\nword"
+    end
   end
 end
