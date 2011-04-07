@@ -10,19 +10,18 @@ class Wordwrap
   def wrap(text)
     raise InvalidParameter, "parameter must be a String" unless text.class == String
     col = 0
-    text.split.inject("") do |str,word|
-      if col > 0
-        if col + word.length + 1 > @wrapcol
-          col = word.length
-          str << "\n"
-        else
-          col += word.length + 1
-          str << " "
-        end
-      else
-        col += word.length
+    text.each_char.inject("") do |str,char|
+      col += 1
+      str << char
+      if col > @wrapcol
+        lastspace = str.rindex ' '
+        lastspace = @wrapcol unless lastspace
+        overhang = str[lastspace..-1].strip
+        str[lastspace..-1] = ""
+        str = str.rstrip + "\n" + overhang
+        col = overhang.length
       end
-      str << word
+      str
     end
   end
 end
