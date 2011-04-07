@@ -51,5 +51,9 @@ describe Wordwrap do
     it "should wrap three words at word boundaries" do
       Wordwrap.new(5).wrap("word word word").should == "word\nword\nword"
     end
+
+    it "should wrap at the last word boundary before wrap length" do
+      Wordwrap.new(10).wrap("word word word").should == "word word\nword"
+    end
   end
 end
