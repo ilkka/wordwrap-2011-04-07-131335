@@ -5,7 +5,7 @@ describe Wordwrap do
   describe "new" do
     it "should instantiate" do
       lambda {
-        Wordwrap.new
+        Wordwrap.new 4
       }.should_not raise_exception
     end
   end
