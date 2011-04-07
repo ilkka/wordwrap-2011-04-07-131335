@@ -3,7 +3,8 @@ end
 
 class Wordwrap
   def initialize(wrapcol)
-    raise InvalidParameter, "parameter must be a Fixnum" unless wrapcol.class == Fixnum  
+    raise InvalidParameter, "parameter must be a Fixnum" unless wrapcol.class == Fixnum
+    @wrapcol = wrapcol
   end
 
   def wrap(text)
