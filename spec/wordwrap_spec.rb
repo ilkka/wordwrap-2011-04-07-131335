@@ -56,6 +56,10 @@ describe Wordwrap do
       Wordwrap.new(10).wrap("word word word").should == "word word\nword"
     end
 
+    it "should break one short word at the wrap length" do
+      Wordwrap.new(2).wrap("word").should == "wo\nrd"
+    end
+
     it "should not touch whitespace other than at the place it wraps at" do
       Wordwrap.new(12).wrap("word   word word").should == "word   word\nword"
     end
