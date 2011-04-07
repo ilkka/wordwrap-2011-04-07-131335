@@ -26,5 +26,14 @@ describe Wordwrap do
         Wordwrap.new(5).wrap "word"
       }.should_not raise_exception
     end
+
+    it "should raise an exception for a non-string parameter" do
+      lambda {
+        Wordwrap.new(5).wrap
+      }.should raise_exception
+      lambda {
+        Wordwrap.new(5).wrap [1, 2, 3]
+      }.should raise_exception
+    end
   end
 end
