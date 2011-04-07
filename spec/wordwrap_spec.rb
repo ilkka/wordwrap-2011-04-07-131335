@@ -55,5 +55,9 @@ describe Wordwrap do
     it "should wrap at the last word boundary before wrap length" do
       Wordwrap.new(10).wrap("word word word").should == "word word\nword"
     end
+
+    it "should not touch whitespace other than at the place it wraps at" do
+      Wordwrap.new(12).wrap("word   word word").should == "word   word\nword"
+    end
   end
 end
