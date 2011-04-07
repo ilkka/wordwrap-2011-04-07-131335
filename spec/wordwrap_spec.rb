@@ -13,6 +13,10 @@ describe Wordwrap do
       lambda {
         Wordwrap.new
       }.should raise_exception
+
+      lambda {
+        Wordwrap.new "hello"
+      }.should raise_exception
     end
   end
 end
