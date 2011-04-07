@@ -19,4 +19,12 @@ describe Wordwrap do
       }.should raise_exception
     end
   end
+
+  describe "wrap" do
+    it "should take a string parameter" do
+      lambda {
+        Wordwrap.new(5).wrap "word"
+      }.should_not raise_exception
+    end
+  end
 end
