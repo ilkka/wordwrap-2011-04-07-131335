@@ -37,7 +37,7 @@ describe Wordwrap do
     end
 
     it "should return the empty string for the empty string" do
-      WordWrap.new(4).wrap("").should == ""
+      Wordwrap.new(4).wrap("").should == ""
     end
   end
 end
