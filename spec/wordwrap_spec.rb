@@ -43,5 +43,9 @@ describe Wordwrap do
     it "should not modify one word shorter than wrap length" do
       Wordwrap.new(6).wrap("word").should == "word"
     end
+
+    it "should wrap two words at word boundary" do
+      Wordwrap.new(5).wrap("word word").should == "word\nword"
+    end
   end
 end
