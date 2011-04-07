@@ -35,5 +35,9 @@ describe Wordwrap do
         Wordwrap.new(5).wrap [1, 2, 3]
       }.should raise_exception
     end
+
+    it "should return the empty string for the empty string" do
+      WordWrap.new(4).wrap("").should == ""
+    end
   end
 end
